@@ -12,7 +12,7 @@ Fig1<-read.csv (text=getURL("https://raw.githubusercontent.com/AhmadMobin/SSRL20
 
 test<- ggplot(Fig1, aes(x= Year, y=Count, fill= Status)) +
   geom_bar(stat= "identity", position="stack", width= 0.5)+
-  scale_fill_manual(values=c("red", "blue"))+
+  scale_fill_manual(values=c('darkorange1', 'yellowgreen'))+
   #labs(caption= "Figure 1- Total Research Studies")+
   #ggtitle("Total Research Studies") + #MAIN TITLE
   #theme(plot.title = element_text(family = "Trebuchet MS", color="black", face="bold", size=20, hjust=1.0, vjust=-0.5))+
@@ -30,7 +30,7 @@ test<- ggplot(Fig1, aes(x= Year, y=Count, fill= Status)) +
   theme (panel.grid.minor=element_blank(), #Hiding the minor gridlines
          panel.grid.major=element_blank()) + #Hiding the major gridlines
   theme (plot.background=element_rect(fill='white'))+ #changes the plot background (not the panel) colour
-  theme (panel.background=element_rect (fill='grey'))+
+  theme (panel.background=element_rect (fill='white'))+
   theme (axis.line.x=element_line(color="black", size=1))+ #black line on x-axis
   theme (axis.line.y=element_line(color="black", size=1))+
   scale_y_continuous (breaks=seq(0,350, by=50), expand=c(0,0))+ #setting custom y-axis breaks & also expand=c removes space btwn bars and x-axis
@@ -46,7 +46,7 @@ Fig2<- read.csv (text=getURL("https://raw.githubusercontent.com/AhmadMobin/SSRL2
 
 test1<- ggplot(Fig2, aes(x= Year, y=Count, fill= Student)) +
   geom_bar(stat= "identity", position="stack", width= 0.5)+
-  scale_fill_manual(values=c("cyan", "forestgreen", "purple4"))+
+  scale_fill_manual(values=c("darkorange1", "darkseagreen2", "yellowgreen"))+
   #labs(caption= "Figure 1- Total Research Studies")+
   #ggtitle("Total Research Studies") + #MAIN TITLE
   #theme(plot.title = element_text(family = "Trebuchet MS", color="black", face="bold", size=20, hjust=1.0, vjust=-0.5))+
@@ -56,15 +56,15 @@ test1<- ggplot(Fig2, aes(x= Year, y=Count, fill= Student)) +
   theme (axis.text.y=element_text(angle=0, size=10))+
   ylab (NULL) + #no title for y-axis
   #geom_text(aes(Year, total, label = total, fill = NULL, vjust=-0.5,  size=20), data = totals)+
-  annotate("text", label= "328", x=1, y=328, size=3)+
-  annotate("text", label= "372", x=2, y=372, size=3)+
-  annotate("text", label= "274", x=3, y=274, size=3)+
-  annotate("text", label= "638", x=4, y=638, size=3)+
-  annotate("text", label= "753", x=5, y=753, size=3)+
+  annotate("text", label= "328", x=1, y=348, size=3)+
+  annotate("text", label= "372", x=2, y=392, size=3)+
+  annotate("text", label= "274", x=3, y=294, size=3)+
+  annotate("text", label= "638", x=4, y=658, size=3)+
+  annotate("text", label= "753", x=5, y=773, size=3)+
   theme (panel.grid.minor=element_blank(), #Hiding the minor gridlines
          panel.grid.major=element_blank()) + #Hiding the major gridlines
   theme (plot.background=element_rect(fill='white'))+ #changes the plot background (not the panel) colour
-  theme (panel.background=element_rect (fill='grey'))+
+  theme (panel.background=element_rect (fill='white'))+
   theme (axis.line.x=element_line(color="black", size=1))+ #black line on x-axis
   theme (axis.line.y=element_line(color="black", size=1))+
   scale_y_continuous (breaks=seq(0,800, by=50), expand=c(0,0))+ #setting custom y-axis breaks & also expand=c removes space btwn bars and x-axis

@@ -1,4 +1,4 @@
-dashboardPage(skin = "green",       
+dashboardPage(skin = "yellow",       
               dashboardHeader(title= "2016-2017 Report"), #Insert the Main Title
               # titleWidth = 350), #Longer Title Width
               
@@ -24,7 +24,7 @@ dashboardPage(skin = "green",
                           h4("Figure X- Number of Students Trained or Employed"),
                           plotlyOutput("Fig2",width = "100%", height = "100%"),
                           HTML ('</br>'),
-                          h5("* JASON IS THERE A TEXT YOU WANT HERE?")),
+                          h5("* The SSRL engaged 753 students in the 299 research studies supported by the unit in 2016-2017 - an increase of about 18% from the 638 students engaged by the SSRL in 2015-2016")),
                   tabItem(tabName="fifth"),
                   tabItem(tabName="sixth")
                   
