@@ -18,7 +18,11 @@ dashboardPage(skin = "yellow",
                           plotlyOutput("Fig1",width = "100%", height = "100%"),
                           HTML ('</br>'),
                           h5("* The SSRL supported 299 research studies in 2016-2017- a substantial increase from the 208 research studies supported by the unit in 2015-2016")),
-                  tabItem(tabName="second"),
+                  tabItem(tabName="second",
+                          tabsetPanel(
+                            tabPanel("T1"),
+                            tabPanel("T2")
+                          )),
                   tabItem(tabName="third"),
                   tabItem(tabName="fourth",
                           h4("Figure X- Number of Students Trained or Employed"),
