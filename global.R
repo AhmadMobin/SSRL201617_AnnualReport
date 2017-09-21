@@ -18,8 +18,9 @@ totals<- Fig1 %>%
 test<- ggplot(Fig1, aes(x= Year, y=Count, fill= Status)) +
   geom_bar(stat= "identity", position="stack", width= 0.5)+
   scale_fill_manual(values=c("red", "blue"))+
-  ggtitle("Total Research Studies") + #MAIN TITLE
-  theme(plot.title = element_text(lineheight=.8, face="bold", size=18))+
+  #labs(caption= "Figure 1- Total Research Studies")+
+  #ggtitle("Total Research Studies") + #MAIN TITLE
+  #theme(plot.title = element_text(family = "Trebuchet MS", color="black", face="bold", size=20, hjust=1.0, vjust=-0.5))+
   xlab(NULL)+ #X-axis label 
   theme (axis.title.x=element_text (angle=0, size=18, face="bold", color="black"))+  #Formating title of x-axis
   theme (axis.text.x=element_text(angle=0, size=12, vjust=90))+ 
@@ -42,4 +43,3 @@ test<- ggplot(Fig1, aes(x= Year, y=Count, fill= Status)) +
   coord_cartesian(ylim=c(0,350))+ #zooms into the y-axis at 0 to 600 
   theme(legend.title=element_blank(), legend.position="bottom") #removes title from legend
 #####
-

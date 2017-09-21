@@ -14,16 +14,16 @@ dashboardPage(skin = "green",
               dashboardBody(  
                 tabItems(
                   tabItem(tabName= "first",
-                          plotlyOutput("Fig1",width = "100%", height = 700),
+                          h4("Figure 1- Total Research Studies"),
+                          plotlyOutput("Fig1",width = "100%", height = "100%"),
                           HTML ('</br>'),
-                          h4("* The SSRL supported 299 research studies in 2016-2017- a substantial increase from the 208 research studies supported by the unit in 2015-2016")),
+                          h5("* The SSRL supported 299 research studies in 2016-2017- a substantial increase from the 208 research studies supported by the unit in 2015-2016")),
                   tabItem(tabName="second"),
                   tabItem(tabName="third"),
                   tabItem(tabName="fourth"),
                   tabItem(tabName="fifth"),
                   tabItem(tabName="sixth")
-                
-                
+                  
+                  
                 )) 
 ) 
-              
