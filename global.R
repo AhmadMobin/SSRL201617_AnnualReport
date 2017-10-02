@@ -25,11 +25,11 @@ test<- ggplot(Fig1, aes(x= Year, y=Count, fill= Status)) +
   theme (axis.text.y=element_text(angle=0, size=10))+
   ylab (NULL) + #no title for y-axis
   #geom_text(aes(Year, total, label = total, fill = NULL, vjust=-0.5,  size=20), data = totals)+
-  annotate("text", label= "39", x=1, y=49)+
-  annotate("text", label= "92", x=2, y=102)+
-  annotate("text", label= "156", x=3, y=166)+
-  annotate("text", label= "208", x=4, y=218)+
-  annotate("text", label= "299", x=5, y=309)+
+  annotate("text", label= "39", x=1, y=39)+
+  annotate("text", label= "92", x=2, y=92)+
+  annotate("text", label= "156", x=3, y=156)+
+  annotate("text", label= "208", x=4, y=208)+
+  annotate("text", label= "299", x=5, y=299)+
   theme (panel.grid.minor=element_blank(), #Hiding the minor gridlines
          panel.grid.major=element_blank()) + #Hiding the major gridlines
   theme (plot.background=element_rect(fill='white'))+ #changes the plot background (not the panel) colour
@@ -59,11 +59,11 @@ test1<- ggplot(Fig2, aes(x= Year, y=Count, fill= Student)) +
   theme (axis.text.y=element_text(angle=0, size=10))+
   ylab (NULL) + #no title for y-axis
   #geom_text(aes(Year, total, label = total, fill = NULL, vjust=-0.5,  size=20), data = totals)+
-  annotate("text", label= "328", x=1, y=348, size=3)+
-  annotate("text", label= "372", x=2, y=392, size=3)+
-  annotate("text", label= "274", x=3, y=294, size=3)+
-  annotate("text", label= "638", x=4, y=658, size=3)+
-  annotate("text", label= "753", x=5, y=773, size=3)+
+  annotate("text", label= "328", x=1, y=328, size=3)+
+  annotate("text", label= "372", x=2, y=372, size=5)+
+  annotate("text", label= "274", x=3, y=274, size=2.5)+
+  annotate("text", label= "638", x=4, y=638, size=3.5)+
+  annotate("text", label= "753", x=5, y=753)+
   theme (panel.grid.minor=element_blank(), #Hiding the minor gridlines
          panel.grid.major=element_blank()) + #Hiding the major gridlines
   theme (plot.background=element_rect(fill='white'))+ #changes the plot background (not the panel) colour
@@ -139,7 +139,3 @@ y <- list(
   title = "",
   titlefont = f
 )
-
-       
-              
-
