@@ -2,9 +2,12 @@ library(shiny)
 library(shinydashboard)
 library(RCurl) #package for the get URL function 
 library(plotly)
+library(RColorBrewer) #colors for plot_ly
 require(ggplot2)
 library(dplyr)
 library(grid) #adding text to ggplots 
+library(DT) #datatables
+
 
 ##### TOTAL RESEARCH STUDIES
 Fig1<-read.csv (text=getURL("https://raw.githubusercontent.com/AhmadMobin/SSRL201617_AnnualReport/master/Fig1.csv"),header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8")
@@ -73,3 +76,70 @@ test1<- ggplot(Fig2, aes(x= Year, y=Count, fill= Student)) +
   theme(legend.title=element_blank(), legend.position="bottom")
 
 ##### 
+
+#Table 1- Number of Research Studies By Lab
+#Table1<- read.csv(file="C:\\Users\\amobin\\Dropbox\\SSRL\\AnnualReport_2016_17\\Table1_ResearchStudiesByLab.csv",
+#                  header=TRUE, sep=",")
+Table1<-read.csv (text=getURL("https://raw.githubusercontent.com/AhmadMobin/SSRL201617_AnnualReport/master/Table1_ResearchStudiesByLab.csv"),header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8")
+
+#Renaming Columns
+colnames(Table1)[2]<- "2012-2013"
+colnames(Table1)[3]<- "2013-2014"
+colnames(Table1)[4]<- "2014-2015"
+colnames(Table1)[5]<- "2015-2016"
+colnames(Table1)[6]<- "2016-2017"
+
+#Creating Hyperlinks
+Links<- c("ssrl.usask.ca/laboratories/col.php", "ssrl.usask.ca/laboratories/edl.php",
+          "ssrl.usask.ca/laboratories/ehl.php", "ssrl.usask.ca/laboratories/qrl.php",
+          "ssrl.usask.ca/laboratories/safihr.php", "ssrl.usask.ca/laboratories/sgal.php",
+          "ssrl.usask.ca/laboratories/snl.php", "ssrl.usask.ca/laboratories/vital.php", NA)
+Table1$Links<-Links
+#making hyperlinks in data table
+Table1$Links <- sapply(Table1$Links, function(x) 
+  toString(tags$a(href=paste0("http://", x), x)))
+
+#TABLE 1 A- Total number of research studies
+Year_1<-39
+Year_2<-92
+Year_3<-156
+Year_4<-208
+Year_5<-299
+Lab<-"TOTAL RESEARCH STUDIES"
+
+Table1a<-cbind(Lab, Year_1, Year_2, Year_3, Year_4, Year_5)
+Table1a<- as.data.frame(Table1a)
+#Renaming columns
+colnames(Table1a)[1]<- "Summary"
+colnames(Table1a)[2]<- "2012-2013"
+colnames(Table1a)[3]<- "2013-2014"
+colnames(Table1a)[4]<- "2014-2015"
+colnames(Table1a)[5]<- "2015-2016"
+colnames(Table1a)[6]<- "2016-2017"
+#####
+#Figure 2016-2017: Collaborative Studies
+#CollabStudies20162017<-read.csv(file="C:\\Users\\amobin\\Dropbox\\SSRL\\AnnualReport_2016_17\\CollabStudies20162017.csv",
+#                      header=TRUE, sep=",")
+CollabStudies20162017<-read.csv (text=getURL("https://raw.githubusercontent.com/AhmadMobin/SSRL201617_AnnualReport/master/CollabStudies20162017.csv"),header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8")
+
+
+#Renaming Columns
+colnames(CollabStudies20162017)[2]<- "Count"
+#FOR PLOT_LY GRAPH
+f <- list(
+  family = "Courier New, monospace",
+  size = 18,
+  color = "#070707"
+)
+x <- list(
+  title = "Number of Studies",
+  titlefont = f
+)
+y <- list(
+  title = "",
+  titlefont = f
+)
+
+       
+              
+
